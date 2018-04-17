@@ -13,8 +13,8 @@ This will Output :
 ```html
 <p>
   <div class="lightgallery">
-    <a href="../img/pic1.png">
-      <img alt="!Description" src="../img/pic1.png" />
+    <a href="../img/pic1.png" data-sub-html="Description">
+      <img alt="Description" src="../img/pic1.png" />
     </a>
   </div>
 </p>

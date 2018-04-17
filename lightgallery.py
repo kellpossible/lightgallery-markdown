@@ -13,12 +13,14 @@ class ImagesTreeprocessor(Treeprocessor):
         for image in images:
             desc = image.attrib["alt"]
             if self.re.match(desc):
-               image.set("alt", desc)
+               desc_subtitle = desc[1:]
+               image.set("alt", desc_subtitle)
                parent = parent_map[image]
                ix = list(parent).index(image)
                div_node = etree.Element('div')
                div_node.set("class","lightgallery")
                new_node = etree.Element('a')
+               new_node.set("data-sub-html", desc_subtitle)
                new_node.set("href",image.attrib["src"])
                new_node.append(image)
                div_node.append(new_node)
