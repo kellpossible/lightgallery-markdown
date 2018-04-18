@@ -41,7 +41,7 @@ print markdown.markdown('[![](/img/pic1.png)](/img/pic1.png)', extensions=[Light
 ## Install
 
 ```bash
-$ cd lightgallery-markdown-description
+$ cd lightgallery-markdown-caption
 
 $ python setup.py install
 ```
