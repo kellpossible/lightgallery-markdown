@@ -1,6 +1,6 @@
-# Lightgallery Markdown Description Extension
+# Lightgallery Markdown Caption Extension
 
-Markdown extension to wrap images in a lightbox.
+Markdown extension to wrap images in a lightbox with a caption.
 
 Will only wrap images which are wrapped in a hyperlink who's href matches the image source. Any text in the same paragraph immediately after the hyperlink is used as a caption in lightbox.
 
@@ -103,7 +103,7 @@ theme:
 ```
 # Extensions
 markdown_extensions:
-  - lightgallery-description
+  - lightgallery_caption
 ```
 
 ## License
