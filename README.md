@@ -24,6 +24,27 @@ This will output:
 </p>
 ```
 
+Sometimes, when there is a small image, you may wish to force the caption to be on the next line due to the way markdown is rendered in some contexts. In this case, if there is no text immediately after the hyperlink tag, this extension will try to use the image Alt tag as the caption.
+
+```
+[![Lightbox Caption](/img/pic1.png)](/img/pic1.png)
+
+Markdown Caption
+```
+
+Which will output:
+
+```html
+<p>
+  <div class="lightgallery">
+    <a href="../img/pic1.png" data-sub-html="Lightbox Caption">
+      <img alt="Lightbox Caption" src="../img/pic1.png" />
+    </a>
+    Markdown Caption
+  </div>
+</p>
+```
+
 This extension is a modification of [lightgallery-markdown](https://github.com/g-provost/lightgallery-markdown), designed to be more backwards compatible with markdown, markdown using this extension will gracefully degrade.
 
 The extension is made to work with [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js) a full featured JavaScript lightgallery/lightbox with no dependencies.

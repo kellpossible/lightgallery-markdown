@@ -24,7 +24,11 @@ class ImagesTreeprocessor(Treeprocessor):
                     if parent.tag == 'p' and a_node.tail != None:
                         desc = a_node.tail
                     else:
-                        desc = ""
+                        # if there is an alt tag, then use that for the caption
+                        if image_node.get('alt') != None:
+                            desc = image_node.get('alt')
+                        else:
+                            desc = ""
 
                     ix = list(parent).index(a_node)
                     div_node = etree.Element('div')
