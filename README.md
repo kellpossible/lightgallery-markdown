@@ -45,6 +45,13 @@ Which will output:
 </p>
 ```
 
+Alternatively, you may also use a `<br>` tag and avoid needing to specify the alt tag:
+
+```
+[![](/img/pic1.png)](/img/pic1.png)
+<br>Caption
+```
+
 This extension is a modification of [lightgallery-markdown](https://github.com/g-provost/lightgallery-markdown), designed to be more backwards compatible with markdown, markdown using this extension will gracefully degrade.
 
 The extension is made to work with [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js) a full featured JavaScript lightgallery/lightbox with no dependencies.
