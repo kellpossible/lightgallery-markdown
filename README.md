@@ -1,28 +1,32 @@
-# Lightgallery markdown Extension
+# Lightgallery Markdown Description Extension
 
 Markdown extension to wrap images in a lightbox.
 
-Will only wrap images by adding **"!"** right after the opening **"["** bracket of the image.
+Will only wrap images which are wrapped in a hyperlink who's href matches the image source. Any text in the same paragraph immediately after the hyperlink is used as a caption in lightbox.
+
+Example:
 
 ```
-![!Description](/img/pic1.png)
+[![Alt](/img/pic1.png)](/img/pic1.png)
+Caption
 ```
 
-This will Output :
+This will output:
 
 ```html
 <p>
   <div class="lightgallery">
-    <a href="../img/pic1.png" data-sub-html="Description">
-      <img alt="Description" src="../img/pic1.png" />
+    <a href="../img/pic1.png" data-sub-html="Caption">
+      <img alt="Alt" src="../img/pic1.png" />
     </a>
+    Caption
   </div>
 </p>
 ```
 
-The extension is made to work with [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js) a full featured JavaScript lightgallery/lightbox with no dependencies.
+This extension is a modification of [lightgallery-markdown](https://github.com/g-provost/lightgallery-markdown), designed to be more backwards compatible with markdown, markdown using this extension will gracefully degrade.
 
-*Extension inspired by : [mardown-lightbox](https://github.com/AliciaSchep/markdown-lightbox)*
+The extension is made to work with [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js) a full featured JavaScript lightgallery/lightbox with no dependencies.
 
 **To test the extension:**
 
@@ -30,14 +34,14 @@ The extension is made to work with [lightgallery.js](https://github.com/sachinch
 import markdown
 from lightgallery import LightGalleryExtension
 
-print markdown.markdown('![!description](/img/pic1.png)', extensions=[LightGalleryExtension()])
+print markdown.markdown('[![](/img/pic1.png)](/img/pic1.png)', extensions=[LightGalleryExtension()])
 ```
 
 
 ## Install
 
 ```bash
-$ cd lightgallery-markdown
+$ cd lightgallery-markdown-description
 
 $ python setup.py install
 ```
@@ -99,7 +103,7 @@ theme:
 ```
 # Extensions
 markdown_extensions:
-  - lightgallery
+  - lightgallery-description
 ```
 
 ## License
